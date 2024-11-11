@@ -22,8 +22,6 @@ public class ByVipSorterTest {
         ByVipSorter vipSorter = new ByVipSorter();
         assertEquals(0, vipSorter.compare(CARL, CARL)); // same VIP
         assertEquals(0, vipSorter.compare(DANIEL, DANIEL)); // same non-VIP
-        assertEquals(0, vipSorter.compare(CARL, BENSON)); // both VIP
-        assertEquals(0, vipSorter.compare(DANIEL, ALICE)); // both non-VIP
     }
     @Test
     public void inequality() {

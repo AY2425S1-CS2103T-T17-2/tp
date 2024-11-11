@@ -2,6 +2,7 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.sql.Time;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
@@ -26,6 +27,8 @@ public class Person {
     private final Set<Tag> tags = new HashSet<>();
     private final boolean isVip;
     private final Comment comment;
+    private static int numCreated;
+    private final long lastUpdated;
 
     /**
      * Every field must be present and not null. The customer will start as a non-VIP.
@@ -46,6 +49,7 @@ public class Person {
         this.comment = comment;
         this.tags.addAll(tags);
         this.isVip = isVip;
+        this.lastUpdated = numCreated++;
     }
 
     public Name getName() {
@@ -78,6 +82,10 @@ public class Person {
 
     public boolean isVip() {
         return isVip;
+    }
+
+    public long getLastUpdated() {
+        return lastUpdated;
     }
 
     /**
