@@ -2,7 +2,6 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.sql.Time;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
@@ -17,6 +16,8 @@ import seedu.address.model.tag.Tag;
  */
 public class Person {
 
+    private static int numCreated;
+
     // Identity fields
     private final Name name;
     private final Phone phone;
@@ -27,7 +28,6 @@ public class Person {
     private final Set<Tag> tags = new HashSet<>();
     private final boolean isVip;
     private final Comment comment;
-    private static int numCreated;
     private final long lastUpdated;
 
     /**
