@@ -71,7 +71,7 @@ public class SearchTagCommandTest {
         SearchTagCommand command = new SearchTagCommand(predicate);
         expectedModel.updateFilteredPersonList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
-        assertEquals(Arrays.asList(BENSON, ALICE, DANIEL), model.getFilteredPersonList());
+        assertEquals(Arrays.asList(BENSON, DANIEL, ALICE), model.getFilteredPersonList());
     }
 
     @Test

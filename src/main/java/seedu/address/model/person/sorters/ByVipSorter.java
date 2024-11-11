@@ -17,6 +17,9 @@ public class ByVipSorter implements Comparator<Person> {
         if (o2.isVip()) {
             ++res;
         }
+        if (res == 0) {
+            return Comparator.<Long>naturalOrder().compare(o2.getLastUpdated(), o1.getLastUpdated());
+        }
         return res;
     }
 }

@@ -16,6 +16,8 @@ import seedu.address.model.tag.Tag;
  */
 public class Person {
 
+    private static int numCreated;
+
     // Identity fields
     private final Name name;
     private final Phone phone;
@@ -26,6 +28,7 @@ public class Person {
     private final Set<Tag> tags = new HashSet<>();
     private final boolean isVip;
     private final Comment comment;
+    private final long lastUpdated;
 
     /**
      * Every field must be present and not null. The customer will start as a non-VIP.
@@ -46,6 +49,7 @@ public class Person {
         this.comment = comment;
         this.tags.addAll(tags);
         this.isVip = isVip;
+        this.lastUpdated = numCreated++;
     }
 
     public Name getName() {
@@ -78,6 +82,10 @@ public class Person {
 
     public boolean isVip() {
         return isVip;
+    }
+
+    public long getLastUpdated() {
+        return lastUpdated;
     }
 
     /**
